@@ -53,7 +53,7 @@ int main(int argc, char * argv[]) {
 				pkthead2 ++;
 			}		
 			*pkthead2 = 0;
-			if(fscanf(f,"%u.%u.%u.%u\t%u.%u.%u.%u", &srcOc1, &srcOc2, &srcOc3, &srcOc4, &dstOc1, &dstOc2, 				&dstOc3, &dstOc4)!=8){
+			if(fscanf(f,"%u.%u.%u.%u\t%u.%u.%u.%u", &srcOc1, &srcOc2, &srcOc3, &srcOc4, &dstOc1, &dstOc2, &dstOc3, &dstOc4)!=8){
 				cout << "Feil!";
 				exit(-1);
 			}
@@ -85,11 +85,11 @@ int main(int argc, char * argv[]) {
 			dstOc4 = (anonymized_dstip << 24) >> 24;
 	
 			//converts octets into string address	
-			srcipv4 = std::to_string(srcOc1) + "." + std::to_string(srcOc2) + "." + std::to_string(srcOc3) + 				"." + std::to_string(srcOc4);
-			dstipv4 = std::to_string(dstOc1) + "." + std::to_string(dstOc2) + "." + std::to_string(dstOc3) + 				"." + std::to_string(dstOc4);
+			srcipv4 = std::to_string(srcOc1) + "." + std::to_string(srcOc2) + "." + std::to_string(srcOc3) + "." + std::to_string(srcOc4);
+			dstipv4 = std::to_string(dstOc1) + "." + std::to_string(dstOc2) + "." + std::to_string(dstOc3) + "." + std::to_string(dstOc4);
 
 			//stores the data to file
-			myfile << version << "\t" << pkthead << srcipv4 << "\t" << dstipv4 << "\t" << pkttail << 				std::string("\n");
+			myfile << version << "\t" << pkthead << srcipv4 << "\t" << dstipv4 << "\t" << pkttail << std::string("\n");
 		}
 		else{
 			*pkthead = 0;
